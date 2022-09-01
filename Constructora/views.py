@@ -7,17 +7,17 @@ def inicio(request):
 
       return render(request, "Constructora/inicio.html")
 
-def cursos(request):
+def casa(request):
 
-      return render(request, "Constructora/cursos.html")
+      return render(request, "Constructora/casa.html")
 
 def clientes(request):
 
       return render(request, "Constructora/clientes.html")
 
 
-def profesores(request):
+def ficha_tecnica(request):
 
-      return render(request, "Constructora/profesores.html")
+      return render(request, "Constructora/ficha_tecnica.html")
 
 
