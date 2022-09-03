@@ -6,7 +6,7 @@ from  .models import * #importamos el archivo models
 
 admin.site.register(cliente)
 
-admin.site.register(ficha_tecnica)
+admin.site.register(Ficha_Tecnica)
 
 admin.site.register(Casa)
 

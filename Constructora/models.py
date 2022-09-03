@@ -9,7 +9,7 @@ class Casa(models.Model):
     fecha_disponible= models.DateField()  
     detalle= models.CharField(max_length=300) 
 
-class ficha_tecnica(models.Model):
+class Ficha_Tecnica(models.Model):
     obra= models.CharField(max_length=40)
     ubicacion= models.CharField(max_length=30)    
     superficie= models.IntegerField()    
