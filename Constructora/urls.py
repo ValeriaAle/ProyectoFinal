@@ -12,5 +12,14 @@ urlpatterns = [
     path('casaFormulario', views.casaFormulario, name="Formulario de Casa"),
     path('fichaFormulario', views.fichaFormulario, name="Formulario de Ficha Tecnica"),
     path('clientesFormulario', views.clientesFormulario, name="Formulario de Clientes"), 
+   
+    path('busquedaCliente', views.busquedaclientes, name="BusquedaCliente"),
+    path('buscar/', views.buscar),
+    
+    path('busquedaFicha', views.busquedaficha, name="BusquedaFicha"),
+    path('buscar1/', views.buscar1),
+    
+    path('busquedaCasa', views.busquedacasa, name="BusquedaCasa"),
+    path('buscar2/', views.buscar2),
     
    ]

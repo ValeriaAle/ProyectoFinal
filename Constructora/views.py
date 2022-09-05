@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from Constructora.models import Casa, cliente, Ficha_Tecnica
 
 
@@ -83,3 +83,24 @@ def clientesFormulario(request):
 
       return render(request, "Constructora/clientesFormulario.html", {"miFormulario": miFormulario3})
 
+def busquedaclientes(request):
+      return render(request, "Constructora/busquedaClientes.html")      
+def buscar(request):
+      respuesta = f"Estoy buscando al Cliente: {request.GET['apellido_y_nombre']}"#No olvidar from django.http import HttpResponse
+      return HttpResponse(respuesta)
+
+
+
+def busquedaficha(request):
+      return render(request, "Constructora/busquedaFicha.html")      
+def buscar1(request):
+      respuesta1 = f"Estoy buscando la ficha técnica: {request.GET['obra']}"#No olvidar from django.http import HttpResponse
+      return HttpResponse(respuesta1)
+
+
+
+def busquedacasa(request):
+      return render(request, "Constructora/busquedaCasa.html")      
+def buscar2(request):
+      respuesta2 = f"Estoy buscando la casa: {request.GET['numero']}"#No olvidar from django.http import HttpResponse
+      return HttpResponse(respuesta2)
