@@ -1,0 +1,16 @@
+{% extends "Constructora/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<h1>Casa Detalle</h1>
+    <p>Numero del inmueble: <i>{{ Casa.numero }}</i></p>
+    <p>Categoria <i>{{ Casa.categoria }}</i></p>
+    <p>Domicilio <i>{{ Casa.domicilio }}</i></p>
+    <p>Tipo <i>{{ Casa.tipo }}</i></p>
+    <p>Fecha disponible <i>{{ Casa.fecha_disponible }}</i></p>  
+    <p>Detalle <i>{{ Casa.detalle }}</i></p>
+
+    <p>
+        <a href="{% url 'List' %}">Regresar</a>
+    </p>
+{% endblock %}

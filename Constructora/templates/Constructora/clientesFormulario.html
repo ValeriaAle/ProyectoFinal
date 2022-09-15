@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Formulario</title>
-    </head>
-    
-    <body>
-        {% if miFormulario.errors %}
+{% extends "Constructora/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<h1>Nuevos Clientes</h1>
+<p>Complete los siguientes datos del cliente</p>
+{% if miFormulario.errors %}
         <p style="color: red;"> Están mal los datos, revisar</p>
         {% endif %}
         
@@ -19,5 +15,4 @@
             </table>
             <input type="submit" value="Enviar" />
         </form>
-    </body>
-</html>
+{% endblock %}

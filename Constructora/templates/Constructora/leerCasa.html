@@ -1,0 +1,16 @@
+{% extends "Constructora/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<h1>Inmuebles</h1>
+<p>Aquí tenemos el detalle de los inmubles disponibles</p>
+
+    {% for p in casas %}
+
+        <li>{{p}}</li>
+       
+    {% endfor %}
+    <br>
+    <a href="casaFormulario"> Agregar otra Casa</a>
+
+{% endblock %}

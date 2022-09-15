@@ -1,0 +1,10 @@
+{% extends "Constructora/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<h1>Fichas Tecnicas</h1>
+<p>Aquí tenemos obras</p>
+{% for p in fichas%}
+        <li>{{p}}</li>
+    {% endfor %}
+{% endblock %}

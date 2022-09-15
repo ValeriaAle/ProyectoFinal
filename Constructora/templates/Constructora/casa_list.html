@@ -1,0 +1,19 @@
+{% extends "Constructora/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<h1>Casa lista</h1>
+
+    <ul>
+        {% for casa in object_list %}
+        <li>
+            <p>Numero: {{ casa.numero }}</p>
+            <p>
+                <a href="{% url 'Detail' casa.id %}">Ver</a>
+                <a href="{% url 'Edit' casa.id %}">Editar</a>
+                <a href="{% url 'Delete' casa.id %}">Borrar</a>
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
