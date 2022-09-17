@@ -7,13 +7,13 @@
     <ul>
         {% for cliente in object_list %}
         <li>
-            <p>Numero: {{ cliente.apellido_y_nombre }}</p>
+            <p>Numero: {{ cliente.telefono }}</p>
             <p>
-                <a href="{% url 'Detail' cliente.id %}">Ver</a>
-                <a href="{% url 'Edit' cliente.id %}">Editar</a>
-                <a href="{% url 'Delete' cliente.id %}">Borrar</a>
+                <a href="{% url 'Detail3' cliente.telefono %}">Ver</a>
+                <a href="{% url 'Edit3' cliente.id %}">Editar</a>
+                <a href="{% url 'Delete3' cliente.id %}">Borrar</a>
             </p>
         </li>
-        {% endfor %}
+        {% endfor %}     
     </ul>
 {% endblock %}

@@ -1,0 +1,13 @@
+{% extends "Constructora/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<h1>Información del cliente</h1>
+    <p>Apellido y Nombre: <i>{{ cliente.apellido_y_nombre }}</i></p>
+    <p>Referencia: <i>{{ cliente.referencia }}</i></p>
+    <p>Telefono: <i>{{ cliente.telefono }}</i></p>
+    <p>Domicilio legal: <i>{{ cliente.domicilio_legal }}</i></p>
+      <p>
+        <a href="{% url 'List3' %}">Regresar</a>
+    </p>
+{% endblock %}

@@ -2,11 +2,11 @@
 {% load static %}
 {% block contenidoQueCambia %}
 <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-<h1>Eliminar Cliente</h1>
+<h1>Eliminar Obra</h1>
 
         <form method="POST">
             {% csrf_token %}
-            ¿Estás seguro que deseas borrar el cliente "{{ object }}"?
+            ¿Estás seguro que deseas borrar la ficha técnica "{{ object }}"?
             <input type="submit" value="Enviar" />
         </form>
 {% endblock %}

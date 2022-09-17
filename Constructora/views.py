@@ -136,6 +136,7 @@ def leerCasa(request):
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 class CasaList(ListView):
       model = Casa
@@ -157,7 +158,7 @@ class ClienteDetalle(DetailView):
       model = cliente
       template_name = "Constructora/cliente_detalle.html"
 
-class FichaDetalle(DeleteView):
+class FichaDetalle(DetailView):
       model = Ficha_Tecnica
       template_name = "Constructora/ficha_detalle.html"
 
@@ -190,15 +191,15 @@ class ClienteDelete(DeleteView):
       success_url = "/Constructora/cliente/list"
 
 class FichaCreacion(CreateView):
-      model = ficha_tecnica
+      model = Ficha_Tecnica
       success_url = "/Constructora/ficha/list"
       fields = ['obra','ubicacion','superficie','construccion','plazos']
 
 class FichaUpdate (UpdateView):
-      model = ficha_tecnica
+      model = Ficha_Tecnica
       success_url = "/Constructora/ficha/list"
       fields = ['obra','ubicacion','superficie','construccion','plazos']
 
 class FichaDelete(DeleteView):
-      model = ficha_tecnica
+      model = Ficha_Tecnica
       success_url = "/Constructora/ficha/list"

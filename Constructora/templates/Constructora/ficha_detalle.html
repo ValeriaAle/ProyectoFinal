@@ -1,0 +1,14 @@
+{% extends "Constructora/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<h1>Información técnica</h1>
+    <p>Obra: <i>{{ Ficha_Tecnica.obra }}</i></p>
+    <p>Ubicacion: <i>{{ Ficha_Tecnica.ubicacion }}</i></p>
+    <p>Superficie: <i>{{ Ficha_Tecnica.superficie }}</i></p>
+    <p>Fecha de construccion: <i>{{ Ficha_Tecnica.construccion }}</i></p>
+    <p>Plazos: <i>{{ Ficha_Tecnica.plazos }}</i></p>
+      <p> 
+        <a href="{% url 'List2' %}">Regresar</a> 
+      </p>
+{% endblock %}
