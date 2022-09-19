@@ -31,3 +31,4 @@ class cliente(models.Model):
 
     def __str__(self):
         return f"Apellido y Nombre: {self.apellido_y_nombre} - Referencia: {self.referencia} - Telefono: {self.telefono} - Domicilio legal: {self.domicilio_legal}"
+

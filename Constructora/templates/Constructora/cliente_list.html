@@ -10,10 +10,12 @@
             <p>Numero: {{ cliente.telefono }}</p>
             <p>
                 <a href="{% url 'Detail3' cliente.telefono %}">Ver</a>
-                <a href="{% url 'Edit3' cliente.id %}">Editar</a>
-                <a href="{% url 'Delete3' cliente.id %}">Borrar</a>
+                <a href="{% url 'Edit3' cliente.telefono %}">Editar</a>
+                <a href="{% url 'Delete3' cliente.telefono %}">Borrar</a>
             </p>
+
         </li>
-        {% endfor %}     
+        {% endfor %}  
+                   
     </ul>
 {% endblock %}

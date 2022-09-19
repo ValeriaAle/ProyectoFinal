@@ -42,4 +42,7 @@ urlpatterns = [
     path(r'^nuevo$', views.ClienteCreacion.as_view(), name='New3'),
     path(r'^editar/(?P<pk>\+)$', views.ClienteUpdate.as_view(), name='Edit3'),
     path(r'^borrar/(?P<pk>\+)$', views.ClienteDelete.as_view(), name='Delete3'),
+
+    path('register', views.register, name='Register'),
+    path('login', views.login_request, name='Login'),
    ]

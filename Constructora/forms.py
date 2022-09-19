@@ -1,4 +1,7 @@
+import email
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+
 
 class CasaFormulario(forms.Form):
 
@@ -21,3 +24,4 @@ class ClientesFormulario(forms.Form):
      referencia= forms.CharField()
      telefono= forms.IntegerField()
      domicilio_legal= forms.CharField()
+
