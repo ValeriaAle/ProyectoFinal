@@ -22,7 +22,7 @@ def ficha_tecnica(request):
 
       return render(request, "Constructora/ficha_tecnica.html")
 
-from Constructora.forms import CasaFormulario
+from Constructora.forms import CasaFormulario, UserRegisterForm
 
 def casaFormulario(request):
 
@@ -209,7 +209,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 #login
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 
 
@@ -246,8 +246,8 @@ def register(request):
 
       if request.method == 'POST':
 
-            form = UserCreationForm(request.POST)
-            #form = UserRegisterForm(request.POST)
+            #form = UserCreationForm(request.POST)
+            form = UserRegisterForm(request.POST)
             if form.is_valid():
 
                   username = form.cleaned_data['username']
@@ -255,7 +255,7 @@ def register(request):
                   return render(request,"Constructora/inicio.html" ,  {"mensaje":"¡Creacion de usuario exitosa!"})
 
       else:
-            form = UserCreationForm()       
-            #form = UserRegisterForm()     
+            #form = UserCreationForm()       
+            form = UserRegisterForm()     
 
       return render(request,"Constructora/registro.html" ,  {"form":form})

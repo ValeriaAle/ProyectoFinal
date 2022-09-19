@@ -1,6 +1,8 @@
+from collections import UserList
 import email
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm 
+from django.contrib.auth.models import User
 
 
 class CasaFormulario(forms.Form):
@@ -25,3 +27,13 @@ class ClientesFormulario(forms.Form):
      telefono= forms.IntegerField()
      domicilio_legal= forms.CharField()
 
+
+class UserRegisterForm(UserCreationForm):
+      email = forms.EmailField()
+      pasword1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+      pasword2 = forms.CharField(label='Repetir la contraseña', widget=forms.PasswordInput)
+
+      class Meta:
+            model = User
+            fields = ['username', 'email', 'password1', 'password2']
+            help_texts = {k:"" for k in fields}
