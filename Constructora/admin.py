@@ -10,3 +10,5 @@ admin.site.register(Ficha_Tecnica)
 
 admin.site.register(Casa)
 
+admin.site.register(Avatar)
+

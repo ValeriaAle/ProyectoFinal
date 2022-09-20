@@ -10,6 +10,7 @@ urlpatterns = [
     path('ficha_tecnica', views.ficha_tecnica, name="ficha_tecnica"),
     path('casa', views.casa, name="casa"),
     path('Cliente', views.clientes, name="Cliente"),
+     path('acercademi', views.acercademi, name="acercademi"),
     path('casaFormulario', views.casaFormulario, name="Formulario de Casa"),
     path('fichaFormulario', views.fichaFormulario, name="Formulario de Ficha Tecnica"),
     path('clientesFormulario', views.clientesFormulario, name="Formulario de Clientes"), 
@@ -48,5 +49,5 @@ urlpatterns = [
     path('login', views.login_request, name='Login'),
     path('logout', LogoutView.as_view(template_name='Constructora/logout.html'), name='Logout'),
     path('editarPerfil', views.editar_perfil, name='EditarPerfil'),
-
+   
    ]

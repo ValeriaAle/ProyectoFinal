@@ -24,6 +24,10 @@ def ficha_tecnica(request):
 
       return render(request, "Constructora/ficha_tecnica.html")
 
+def acercademi(request):
+
+      return render(request, "Constructora/acercademi.html")
+
 from Constructora.forms import CasaFormulario, UserRegisterForm
 
 def casaFormulario(request):

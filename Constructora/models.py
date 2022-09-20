@@ -1,4 +1,6 @@
+from distutils.command.upload import upload
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Casa(models.Model):
@@ -32,3 +34,8 @@ class cliente(models.Model):
     def __str__(self):
         return f"Apellido y Nombre: {self.apellido_y_nombre} - Referencia: {self.referencia} - Telefono: {self.telefono} - Domicilio legal: {self.domicilio_legal}"
 
+class Avatar(models.Model):
+      user = models. ForeignKey(User, on_delete=models.CASCADE)
+      imagen = models.ImageField(upload_to='avatares', null=True, blank = True)
+      def __str__(self):
+        return f"{self.user} - {self.imagen}"
