@@ -47,5 +47,6 @@ urlpatterns = [
     path('register', views.register, name='Register'),
     path('login', views.login_request, name='Login'),
     path('logout', LogoutView.as_view(template_name='Constructora/logout.html'), name='Logout'),
+    path('editarPerfil', views.editar_perfil, name='EditarPerfil'),
 
    ]

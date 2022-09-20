@@ -27,9 +27,17 @@
                 <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a>
                 <a class="navbar-brand" href="{% url 'List3' %}">Cliente</a>                             
                 <a class="navbar-brand" href="{% url 'List2' %}">Obras -Ficha Tecnica</a>
-                <a class="navbar-brand" href="{% url 'List1' %}">Casas</a>                          
-                <a class="btn btn-primary" href="{% url 'Login' %}">INICIAR</a>
+                <a class="navbar-brand" href="{% url 'List1' %}">Casas</a>                        
                 <a class="btn btn-primary" href="{% url 'Logout' %}">LOGOUT</a>
+
+                {% if not request.user.is_authenticated %}
+                <li class="sidebar-nav-item"><a href="{% url 'Login' %}">HACER LOGIN</a></li>     
+                {% endif %}    
+                
+                {% if  request.user.is_authenticated %}
+                <h3 style="margin-bottom: 0;"> Hola, {{user.username}}</h3>
+                {% endif %} 
+                
             </div>
         </nav>
 

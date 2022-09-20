@@ -1,6 +1,8 @@
 from ast import Delete
 from django.shortcuts import render, HttpResponse
 from Constructora.models import Casa, cliente, Ficha_Tecnica
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 
 
@@ -62,7 +64,7 @@ def fichaFormulario(request):
 
       return render(request, "Constructora/fichaFormulario.html", {"miFormulario": miFormulario2})
 
-from Constructora.forms import ClientesFormulario
+from Constructora.forms import ClientesFormulario, UserEditForm
 
 def clientesFormulario(request):
 
@@ -259,3 +261,35 @@ def register(request):
             form = UserRegisterForm()     
 
       return render(request,"Constructora/registro.html" ,  {"form":form})
+
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def inicio(request):
+      return render(request, "Constructora/inicio.html")
+
+
+def editar_perfil(request):
+      
+    usuario = request.user
+
+    if request.method == 'POST':
+
+        miFormulario = UserEditForm(request.POST)
+
+        if miFormulario.is_valid():
+
+            informacion = miFormulario.cleaned_data
+
+            usuario.email = informacion['email']
+            usuario.password1 = informacion['password1']
+            usuario.password2 = informacion['password2']                
+            usuario.save()
+
+            return render(request, "Constructora/inicio.html")
+
+    else:
+
+        miFormulario = UserEditForm(initial={'email': usuario.email})
+
+    return render(request, "Constructora/editarPerfil.html", {"miFormulario": miFormulario, "usuario": usuario})
